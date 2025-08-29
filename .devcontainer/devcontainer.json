@@ -1,0 +1,52 @@
+{
+    "name": "Building Map App",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.vscode-typescript-next",
+                "bradlc.vscode-tailwindcss",
+                "esbenp.prettier-vscode",
+                "ms-vscode.vscode-eslint",
+                "ms-vscode.vscode-json",
+                "formulahendry.auto-rename-tag",
+                "christian-kohler.path-intellisense",
+                "ms-vscode.vscode-npm-script"
+            ],
+            "settings": {
+                "typescript.preferences.includePackageJsonAutoImports": "on",
+                "typescript.suggest.autoImports": true,
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "tailwindCSS.includeLanguages": {
+                    "typescript": "javascript",
+                    "typescriptreact": "javascript"
+                }
+            }
+        }
+    },
+    "forwardPorts": [
+        3000,
+        3001
+    ],
+    "portsAttributes": {
+        "3000": {
+            "label": "Next.js App (Production)",
+            "onAutoForward": "notify"
+        },
+        "3001": {
+            "label": "Next.js App (Development)",
+            "onAutoForward": "notify"
+        }
+    },
+    "postCreateCommand": "npm install",
+    "postStartCommand": "npm run dev",
+    "remoteUser": "node",
+    "mounts": [
+        "source=${localWorkspaceFolder}/.env.local,target=/workspaces/building-map-app/.env.local,type=bind,consistency=cached"
+    ]
+}

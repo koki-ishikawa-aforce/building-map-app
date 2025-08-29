@@ -6,7 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:dev": "docker-compose up building-map-app-dev",
+    "docker:prod": "docker-compose up building-map-app",
+    "docker:build": "docker-compose build",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.10",

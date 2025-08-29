@@ -2,6 +2,31 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Option 1: Dev Container (推奨)
+
+VS Code Dev Containersを使用して開発環境を構築する方法：
+
+1. **VS Code Dev Containers拡張機能をインストール**
+   - VS Codeで拡張機能「Dev Containers」をインストール
+
+2. **Dev Containerで開く**
+   - VS Codeでこのプロジェクトを開く
+   - `Ctrl+Shift+P` → 「Dev Containers: Reopen in Container」を選択
+   - コンテナのビルドが完了するまで待つ
+
+3. **環境変数の設定**
+   ```bash
+   # .env.localファイルを作成
+   cp .env.local.example .env.local
+   # エディタで.env.localを開いてAPIキーを設定
+   ```
+
+4. **開発サーバーの起動**
+   - コンテナ内で自動的に`npm run dev`が実行されます
+   - ブラウザで http://localhost:3000 にアクセス
+
+### Option 2: ローカル環境
+
 First, run the development server:
 
 ```bash
